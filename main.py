@@ -4,7 +4,7 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 
-def rand_A_B(Nmax):
+def rand_AB(Nmax):
    A_ = []
    B_ = []
    for i in range(0, Nmax):
@@ -18,8 +18,7 @@ def rand_A_B(Nmax):
 def strategy(t, A, B):
    x_yng = []
    for i in range(0, Nmax):
-      x_yng_ = A[i] + B[i]*np.cos(2*np.pi*t[i])
-      x_yng_ = round(x_yng, 3)
+      x_yng_ = A[i] + B[i]*np.cos(2*np.pi*t)
       x_yng.append(x_yng_)
    return x_yng
 
@@ -69,9 +68,10 @@ plt.plot(t, z)
 plt.show()
 """
 
-AB = rand_A_B(20)
-A = AB[0]
-B = AB[1]
+AB = rand_AB(Nmax)
 t = np.linspace(0, 1, Nmax)
-x = strategy(t, A, B)
-print('x = ', x)
+x = strategy(t, AB[0], AB[1])
+ z = []
+for i in range (0, Nmax):
+   z.append(x[i + 1])
+   plt.plot(t, z[i])
