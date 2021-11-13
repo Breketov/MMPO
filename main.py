@@ -4,7 +4,7 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 
-def rand_AB(Nmax):
+""" def rand_AB(Nmax):
    A_ = []
    B_ = []
    for i in range(0, Nmax):
@@ -26,7 +26,10 @@ Nmax = 20
 D = 120
 D0 = 70  
 sigma1 = 0.25
-sigma2 = 0.0003
+sigma2 = 0.0003 """
+
+
+
 """
 xy = []
 M1 = []
@@ -67,7 +70,15 @@ z = -112.289+ 5.17*np.cos(2*np.pi*t)
 plt.plot(t, z)
 plt.show()
 """
-
+""" 
 AB = rand_AB(Nmax)
 t = np.linspace(0, 1, Nmax)
-x = strategy(t, AB[0], AB[1])
+x = strategy(t, AB[0], AB[1]) """
+
+
+data_AB = pd.read_csv('data_AB.csv')
+
+Ay = data_AB["A_yng"].tolist()
+By = data_AB["B_yng"].tolist()
+print(Ay)
+print(By)
