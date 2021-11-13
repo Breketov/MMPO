@@ -71,7 +71,3 @@ plt.show()
 AB = rand_AB(Nmax)
 t = np.linspace(0, 1, Nmax)
 x = strategy(t, AB[0], AB[1])
- z = []
-for i in range (0, Nmax):
-   z.append(x[i + 1])
-   plt.plot(t, z[i])
